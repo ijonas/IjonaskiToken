@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "outDir": "./build",
+    "allowJs": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "target": "es6",
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": false,
+    "lib": [
+      "es2015", "dom",
+        "esnext.asynciterable"
+    ]
+  },
+  "include": [
+      "./src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
