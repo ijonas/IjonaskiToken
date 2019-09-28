@@ -7,20 +7,29 @@
     "test": "test"
   },
   "scripts": {
+    "generate": "truffle compile && typechain --target truffle './build/**/*.json'",
     "start": "node built/index.js",
-    "tsc": "./node_modules/.bin/tsc --watch",
-    "tscbuild": "./node_modules/.bin/tsc",
+    "tsc": "./node_modules/.bin/tsc --noEmit",
+    "build": "./node_modules/.bin/tsc",
     "test2": "./node_modules/mocha/bin/mocha --exit -r ts-node/register test/**/*.ts",
     "upgrade-interactive": "npm-check --update",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "truffle test && npm run tsc"
   },
   "author": "Ijonas Kisselbach",
   "license": "ISC",
   "devDependencies": {
-    "chai": "^4.2.0",
+    "@types/bignumber.js": "^5.0.0",
+    "@types/chai": "^4.2.3",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.7.8",
     "openzeppelin-solidity": "^2.3.0",
+    "truffle-typings": "^1.0.8",
     "ts-node": "^8.4.1",
     "tslint": "^5.20.0",
+    "typechain": "^0.3.21",
     "typescript": "^3.6.3"
+  },
+  "dependencies": {
+    "truffle": "^5.0.38"
   }
 }
